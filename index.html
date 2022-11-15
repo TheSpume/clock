@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .team1 {
+
+            margin-left: 900px;
+            position: static;
+        }
+
+        .team2 {
+            margin-left: 400px;
+            margin-right: 400px;
+            width: 800px;
+            height: 70px;
+            font-family: '微软雅黑';
+            font-size: 50px;
+        }
+
+        #month3 {
+            margin-top: -140px;
+            margin-left: 200px;
+        }
+
+        #month4 {
+            margin-top: 0px;
+            margin-left: 200px;
+        }
+
+        #day5 {
+            margin-top: -140px;
+            margin-left: 400px;
+        }
+
+        #day6 {
+            margin-top: 0px;
+            margin-left: 400px;
+        }
+
+        #week7 {
+            margin-top: -140px;
+            margin-left: 600px;
+        }
+
+        #week8 {
+            margin-top: 0px;
+            margin-left: 600px;
+        }
+
+        #tim9 {
+            margin-top: -140px;
+            margin-left: 800px;
+        }
+
+        #tim10 {
+            margin-top: 0px;
+            margin-left: 800px;
+        }
+
+        .team3 {
+            width: 196px;
+            text-align: center;
+            border-width: 2px;
+            border-style: double;
+            border-color: bisque;
+        }
+
+        .team4 {
+
+            margin-left: 500px;
+            position: static;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="team1"><button id="date1">点我显示<br>当前时间</button></div>
+    <div class="team2">
+        <div class="team3" id="year1"></div>
+        <div class="team3" id="year2"></div>
+        <div class="team3" id="month3"></div>
+        <div class="team3" id="month4"></div>
+        <div class="team3" id="day5"></div>
+        <div class="team3" id="day6"></div>
+        <div class="team3" id="week7"></div>
+        <div class="team3" id="week8"></div>
+        <div class="team3" id="tim9"></div>
+        <div class="team3" id="tim10"></div>
+        <div class="team4"><button onclick="shuaxing()">刷新时间</button></div>
+
+    </div>
+
+
+</body>
+<script>
+    var a = new Date()
+    document.getElementById('date1').onclick = function (a) {
+        a = window.a
+        alert(a.toLocaleString())
+        for (var i = 0; i <= 10; i++) {
+            if (i == 1) {
+                document.getElementById('year' + i).innerHTML = a.getFullYear()
+            }
+            else if (i == 2) {
+                document.getElementById('year' + i).innerHTML = '年'
+            }
+            else if (i == 3) {
+                document.getElementById('month' + i).innerHTML = a.getMonth() + 1
+            }
+            else if (i == 4) {
+                document.getElementById('month' + i).innerHTML = '月'
+            }
+            else if (i == 5) {
+                document.getElementById('day' + i).innerHTML = a.getDate()
+            }
+            else if (i == 6) {
+                document.getElementById('day' + i).innerHTML = '日'
+            }
+            else if (i == 7) {
+                document.getElementById('week' + i).innerHTML = a.getDay()
+            }
+            else if (i == 8) {
+                document.getElementById('week' + i).innerHTML = '星期'
+            }
+            else if (i == 9) {
+                document.getElementById('tim' + i).innerHTML = a.toLocaleTimeString()
+            }
+            else if (i == 10) {
+                document.getElementById('tim' + i).innerHTML = '时间'
+            }
+        }
+    }
+    function shuaxing() {
+        if (confirm('是否刷新现在的时间？')) {
+            return location.reload()
+        }
+    }
+</script>
+
+</html>
